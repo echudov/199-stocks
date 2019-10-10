@@ -1,5 +1,4 @@
 import random
-import time
 
 
 class MultipleSimulations:
@@ -40,7 +39,6 @@ class MultipleSimulations:
         returnaverage = []
         for i in range(len(self.totalstreaklist)):
             streakAverage = self.totalstreaklist[i] / self.k
-            # print(streakAverage)
             returnaverage.append(streakAverage)
         return returnaverage
 
@@ -108,15 +106,3 @@ class UpDown:
                     streaklist.append(0)
         else:
             streaklist[newstreak - 1] += 1 # increases the counter by 1
-
-
-def main():
-    test = MultipleSimulations(100, 100, 0.6)
-    test.simulate()
-    print(test.largeststreak())
-    print(test.largeststreaklist)
-    print(test.totalstreaklist)
-    print(test.averagestreaks())
-
-main()
-

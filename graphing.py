@@ -1,4 +1,5 @@
 import plotly.graph_objects as go
+import numpy as np
 
 
 def dual_bar_chart(index_name, r_streaks, sim_streaks):
@@ -51,6 +52,8 @@ def dual_bar_chart(index_name, r_streaks, sim_streaks):
             )
         )
     )
+
+    fig.show()
 
 def graph_largest_streak(index_name, largest_streaks_uncounted):
     labels = []

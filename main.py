@@ -1,6 +1,7 @@
 import simulations
 import time
 import csvParser
+import numpy as np
 import graphing
 
 
@@ -21,7 +22,6 @@ class SingleIteration:
         self.simulate_index = simulations.MultipleSimulations(100, self.data_points, self.p)
         self.real_streak_counts = count_streaks(csvParser.streak_data_dict[self.index])
 
-
     def iterate(self):
         self.simulate_index.simulate()
         self.average_streaks = self.simulate_index.averagestreaks()
@@ -29,6 +29,7 @@ class SingleIteration:
         self.largest_streaks.sort()
         graphing.dual_bar_chart(self.index, self.real_streak_counts, self.average_streaks)
         graphing.graph_largest_streak(self.index, self.simulate_index.largeststreaklist)
+
 
 def count_streaks(streak_list):
     counted_streaks = [1]
@@ -45,6 +46,7 @@ def count_streaks(streak_list):
                 counted_streaks[current_streak - 1] += 1
         current_streak = int(streak_list[i])
     return counted_streaks
+
 
 def iterate_indicies(symbols):
     for index in symbols:
