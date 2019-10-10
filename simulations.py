@@ -118,9 +118,5 @@ def main():
     print(test.totalstreaklist)
     print(test.averagestreaks())
 
-
-
-start_time = time.time()
 main()
-end_time = time.time()
-print (end_time - start_time, "seconds")
+
